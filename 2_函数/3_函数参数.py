@@ -46,6 +46,21 @@ def calc(*numbers):
 
 calc(1,2,3) # 客户端代码
 
-# 形参如果是一个list和tuple
+# 形参如果是一个list和tuple，如下传参
 nums = [1,2,3]
-calc(*nums) # 如下传参
+calc(*nums)
+
+## 关键字参数
+# 传入的0个或多个含参数名的参数，内部自动组装为dict
+def person(name, age, **kw):
+    print 'name',name,'age:',age,'kw:',kw
+
+person('longjq',26,city='shenzhen') #必须带参数名
+person('longjq',27,gender='M',job='Engineer') # 可以传入多个带参数名的参数
+
+kw={'city':'beijing','job':'engineer'}
+person('long',24,**kw) # 直接传入dict，可以自动匹配内部的dict
+
+## 参数组合
+
+
